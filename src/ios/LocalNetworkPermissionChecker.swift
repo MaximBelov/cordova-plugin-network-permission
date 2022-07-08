@@ -50,21 +50,26 @@ class LocalNetworkPermissionChecker {
     ///   - granted: Informs application that user has provided us with local network permission.
     ///   - failure: Something went awry.
     private func actionRequestNetworkPermissions(granted: @escaping () -> Void, failure: @escaping (Error?) -> Void) {
-        guard let port = NWEndpoint.Port(rawValue: port) else { return }
 
-        let connection = NWConnection(host: NWEndpoint.Host(host), port: port, using: .udp)
-        connection.start(queue: .main)
+        if #available(iOS 12, *) {
+            guard let port = NWEndpoint.Port(rawValue: port) else { return }
 
-        checkPermissionStatus = DispatchWorkItem(block: { [weak self] in
-            if connection.state == .ready {
-                self?.detectDeclineTimer?.invalidate()
-                granted()
-            } else {
-                failure(nil)
-            }
-        })
+            let connection = NWConnection(host: NWEndpoint.Host(host), port: port, using: .udp)
+            connection.start(queue: .main)
 
-        detectDeclineTimer?.fireDate = Date() + 1
+            checkPermissionStatus = DispatchWorkItem(block: { [weak self] in
+                if connection.state == .ready {
+                    self?.detectDeclineTimer?.invalidate()
+                    granted()
+                } else {
+                    failure(nil)
+                }
+            })
+
+            detectDeclineTimer?.fireDate = Date() + 1
+        } else {
+            granted()
+        }
     }
 
     /// Permission prompt will throw the application in to the background and invalidate the timer.
