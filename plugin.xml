@@ -11,46 +11,19 @@
   <repo>https://github.com/saschal-j5int/cordova-plugin-network-permission</repo>
   <issue>https://github.com/saschal-j5int/cordova-plugin-network-permission/issues</issue>
 
-  <js-module src="www/networkPermission.js" name="networkPermission">
-    <clobbers target="webserver" />
+  <js-module src="www/localNetworkPermission.js" name="localNetworkPermission">
+    <clobbers target="localNetworkPermission" />
   </js-module>
-
-  <platform name="android">
-    <framework src="org.nanohttpd:nanohttpd:+" />
-    <source-file src="src/android/Webserver.java" target-dir="src/org/apache/cordova/plugin"/>
-    <source-file src="src/android/NanoHTTPDWebserver.java" target-dir="src/org/apache/cordova/plugin"/>
-    <config-file target="config.xml" parent="/*">
-      <feature name="Webserver">
-        <param name="android-package" value="org.apache.cordova.plugin.Webserver"/>
-      </feature>
-    </config-file>
-  </platform>
 
   <platform name="ios">
     <config-file target="config.xml" parent="/*">
-      <feature name="Webserver">
-        <param name="ios-package" value="Webserver" />
+      <feature name="LocalNetworkPermission">
+        <param name="ios-package" value="LocalNetworkPermission" />
       </feature>
     </config-file>
 
-    <source-file src="src/ios/Webserver.swift" />
-    <source-file src="src/ios/SynchronizedDictionary.swift" />
+    <source-file src="src/ios/LocalNetworkPermissionChecker.swift" />
+    <source-file src="src/ios/LocalNetworkPermission.swift" />
     <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
-
-    <framework src="libz.tbd" />
-    <framework src="libxml2.tbd" />
-
-    <podspec>
-      <config>
-        <source url="https://github.com/CocoaPods/Specs.git"/>
-      </config>
-      <pods use-frameworks="true">
-        <pod name="GCDWebServer" spec="~> 3.5.2"/>
-      </pods>
-    </podspec>
-    
-    <!-- GCDWebserver -->
-    <header-file src="src/ios/GCDWebServer-Bridging-Header.h" type="BridgingHeader"/>
-
   </platform>
 </plugin>
