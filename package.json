@@ -2,7 +2,7 @@
   "name": "cordova-plugin-network-permission",
   "version": "1.0.1",
   "description": "Network Access Permission Request for Cordova Apps",
-  "homepage": "https://github.com/saschal-j5int/cordova-plugin-network-permission/",
+  "homepage": "https://github.com/j5int/cordova-plugin-network-permission/",
   "author": {
     "name": "Sascha Barrett Lenz"
   },
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/saschal-j5int/cordova-plugin-network-permission"
+    "url": "https://github.com/j5int/cordova-plugin-network-permission"
   },
   "keywords": [
     "cordova",

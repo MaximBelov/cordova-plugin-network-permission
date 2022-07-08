@@ -8,8 +8,8 @@
 
   <name>Network Access Permission Request for Cordova Apps</name>
   <keywords>cordova,permission,network</keywords>
-  <repo>https://github.com/saschal-j5int/cordova-plugin-network-permission</repo>
-  <issue>https://github.com/saschal-j5int/cordova-plugin-network-permission/issues</issue>
+  <repo>https://github.com/j5int/cordova-plugin-network-permission</repo>
+  <issue>https://github.com/j5int/cordova-plugin-network-permission/issues</issue>
 
   <js-module src="www/localNetworkPermission.js" name="localNetworkPermission">
     <clobbers target="localNetworkPermission" />
