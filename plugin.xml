@@ -25,5 +25,9 @@
     <source-file src="src/ios/LocalNetworkPermissionChecker.swift" />
     <source-file src="src/ios/LocalNetworkPermission.swift" />
     <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+
+    <config-file overwrite="true" parent="NSLocalNetworkUsageDescription" target="*-Info.plist">
+        <string>This app will be able to discover and connect to devices on the networks you use.</string>
+    </config-file>
   </platform>
 </plugin>
