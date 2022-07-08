@@ -1,6 +1,9 @@
 # IDE
 .idea
 
+# node package
+node_modules/
+
 # Logs
 logs
 *.log
