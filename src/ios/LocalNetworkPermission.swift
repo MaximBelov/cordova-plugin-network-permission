@@ -9,10 +9,14 @@
             self.commandDelegate!.send(pluginResult, callbackId: command.callbackId)
         },
         failure: { error in
-            if let error = error {
-                print("Failed with error: \(error.localizedDescription)")
+            var errorMessage = "Permission not granted"
+            if error != nil {
+                errorMessage = error?.localizedDescription ?? "Permission not granted"
             }
-            self.commandDelegate!.send(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: error.localizedDescription), callbackId: command.callbackId)
+
+            print("Permission check failed with error: \(errorMessage)")
+
+            self.commandDelegate!.send(CDVPluginResult(status: CDVCommandStatus_ERROR, messageAs: errorMessage), callbackId: command.callbackId)
         })
     }
 }
