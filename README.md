@@ -11,6 +11,9 @@ get your app into a state that it can't recover from.
 
 ### Solution
 
+The native code comes from this stackoverflow thread. Credit to @iUrii
+https://stackoverflow.com/questions/63940427/ios-14-how-to-trigger-local-network-dialog-and-check-user-answer
+
 This plugin sends a dummy udp package which force the dialog to pop up. It then keeps checking the status.
 Once the user has either accepted or declined the plugin feeds back to the javascript. 
 
