@@ -2,7 +2,7 @@
 
 This plugin helps to request the network permission from iOS 14 and above.
 
-###Problem
+### Problem
 
 There is no api from Apple that allows synchronously to check if the 
 local network permission is granted. Instead, it will pop up the dialog on first attempt but the app
