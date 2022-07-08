@@ -1,3 +1,5 @@
+// Credit to @iUrii
+
 class LocalNetworkPrivacy : NSObject {
     let service: NetService
 

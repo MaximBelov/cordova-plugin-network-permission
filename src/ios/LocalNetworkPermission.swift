@@ -1,3 +1,5 @@
+// Credit to @iUrii
+
 @objc(LocalNetworkPermission) class LocalNetworkPermission : CDVPlugin {
     @objc(checkPermissions:)
     func checkPermissions(_ command: CDVInvokedUrlCommand) {
