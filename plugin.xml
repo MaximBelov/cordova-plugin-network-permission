@@ -29,5 +29,16 @@
     <config-file overwrite="true" parent="NSLocalNetworkUsageDescription" target="*-Info.plist">
         <string>This app will be able to discover and connect to devices on the networks you use.</string>
     </config-file>
+
+    <config-file overwrite="true" parent="NSLocalNetworkUsageDescription" target="*-Info.plist">
+        <string>This app will be able to discover and connect to devices on the networks you use.</string>
+    </config-file>
+
+    <config-file overwrite="true" parent="NSBonjourServices" target="*-Info.plist">
+        <array>
+          <string>_lnp._tcp.</string>
+      </array>
+    </config-file>
+    
   </platform>
 </plugin>
