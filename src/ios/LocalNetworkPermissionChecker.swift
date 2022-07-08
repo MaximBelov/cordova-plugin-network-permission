@@ -1,3 +1,7 @@
+/**
+ * Copied from https://stackoverflow.com/questions/63940427/ios-14-how-to-trigger-local-network-dialog-and-check-user-answer
+ */
+
 import UIKit
 import Network
 
@@ -50,7 +54,7 @@ class LocalNetworkPermissionChecker {
 
         let connection = NWConnection(host: NWEndpoint.Host(host), port: port, using: .udp)
         connection.start(queue: .main)
-        
+
         checkPermissionStatus = DispatchWorkItem(block: { [weak self] in
             if connection.state == .ready {
                 self?.detectDeclineTimer?.invalidate()
