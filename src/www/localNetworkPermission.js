@@ -1,5 +1,5 @@
 import exec from 'cordova/exec';
 
-export function requestNetworkPermission(successCallback, failureCallback) {
+export function requestLocalNetworkPermission(successCallback, failureCallback) {
     exec(successCallback, failureCallback, 'LocalNetworkPermission', 'checkPermissions')
 }
