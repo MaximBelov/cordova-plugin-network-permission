@@ -21,7 +21,9 @@ This allows to check this permission synchronous.
 
 ## Current supported platforms
 
-- iOS 10 or higher. However only from iOS 12 it will do a check otherwise will just return successful.
+- iOS 14 or higher.
+
+It has only been tested on iOS 15.4.1
 
 ## Installation
 
