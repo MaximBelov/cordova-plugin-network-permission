@@ -37,10 +37,7 @@ Just add the cordova plugin to your project
 window.localNetworkPermission.requestLocalNetworkPermission(function () {
     console.info('Permission was granted successful')
 }, function (error) {
-    if (error) {
-        console.error('Could not get permission due to an error ' + error);
-    } else {
-        console.error('Permission declined');
-    }
+    // error is string "Permission declined"
+    console.error('Permission declined');
 });
 ```
