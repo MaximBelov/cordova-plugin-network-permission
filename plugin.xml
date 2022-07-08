@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+    id="cordova-plugin-network-permission"
+    version="1.0.0">
+  <engines>
+    <engine name="cordova" version=">=6.5.0" />
+  </engines>
+
+  <name>Network Access Permission Request for Cordova Apps</name>
+  <keywords>cordova,permission,network</keywords>
+  <repo>https://github.com/j5int/cordova-plugin-network-permission</repo>
+  <issue>https://github.com/j5int/cordova-plugin-network-permission/issues</issue>
+
+  <js-module src="www/localNetworkPermission.js" name="localNetworkPermission">
+    <clobbers target="localNetworkPermission" />
+  </js-module>
+
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="LocalNetworkPermission">
+        <param name="ios-package" value="LocalNetworkPermission" />
+      </feature>
+    </config-file>
+
+    <source-file src="src/ios/LocalNetworkPermissionChecker.swift" />
+    <source-file src="src/ios/LocalNetworkPermission.swift" />
+    <dependency id="cordova-plugin-add-swift-support" version="2.0.2"/>
+
+    <config-file overwrite="true" parent="NSLocalNetworkUsageDescription" target="*-Info.plist">
+        <string>This app will be able to discover and connect to devices on the networks you use.</string>
+    </config-file>
+
+    <config-file overwrite="true" parent="NSLocalNetworkUsageDescription" target="*-Info.plist">
+        <string>This app will be able to discover and connect to devices on the networks you use.</string>
+    </config-file>
+
+    <config-file overwrite="true" parent="NSBonjourServices" target="*-Info.plist">
+        <array>
+          <string>_lnp._tcp.</string>
+      </array>
+    </config-file>
+
+  </platform>
+</plugin>
