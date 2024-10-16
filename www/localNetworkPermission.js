@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.requestLocalNetworkPermission = requestLocalNetworkPermission;
 var _exec = _interopRequireDefault(require("cordova/exec"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function requestLocalNetworkPermission(successCallback, failureCallback) {
   (0, _exec["default"])(successCallback, failureCallback, 'LocalNetworkPermission', 'checkPermissions');
 }
