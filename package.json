@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-network-permission",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Network Access Permission Request for Cordova Apps",
   "homepage": "https://github.com/j5int/cordova-plugin-network-permission/",
   "author": {
